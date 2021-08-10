@@ -54,7 +54,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
         [BackgroundDependencyLoader]
         private void load(OsuConfigManager config)
         {
-            shouldFadeHitCirclesInstantly = config.GetBindable<bool>(OsuSetting.FadeHitCirclesInstantly).Value;
+            shouldFadeHitCirclesInstantly = config.GetBindable<bool>(OsuSetting.FadeLegacyHitCirclesInstantly).Value;
             var drawableOsuObject = (DrawableOsuHitObject)drawableObject;
 
             bool allowFallback = false;

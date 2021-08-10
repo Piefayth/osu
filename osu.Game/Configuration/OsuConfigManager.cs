@@ -107,7 +107,7 @@ namespace osu.Game.Configuration
             SetDefault(OsuSetting.KeyOverlay, false);
             SetDefault(OsuSetting.PositionalHitSounds, true);
             SetDefault(OsuSetting.AlwaysPlayFirstComboBreak, true);
-            SetDefault(OsuSetting.FadeHitCirclesInstantly, false);
+            SetDefault(OsuSetting.FadeLegacyHitCirclesInstantly, false);
 
             SetDefault(OsuSetting.FloatingComments, false);
 
@@ -216,7 +216,7 @@ namespace osu.Game.Configuration
         KeyOverlay,
         PositionalHitSounds,
         AlwaysPlayFirstComboBreak,
-        FadeHitCirclesInstantly,
+        FadeLegacyHitCirclesInstantly,
         FloatingComments,
         HUDVisibilityMode,
         ShowProgressGraph,
