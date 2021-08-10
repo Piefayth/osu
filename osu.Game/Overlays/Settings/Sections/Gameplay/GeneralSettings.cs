@@ -74,6 +74,11 @@ namespace osu.Game.Overlays.Settings.Sections.Gameplay
                     LabelText = "Always play first combo break sound",
                     Current = config.GetBindable<bool>(OsuSetting.AlwaysPlayFirstComboBreak)
                 },
+                new SettingsCheckbox
+                {
+                    LabelText = "Fade hitcircles instantly",
+                    Current = config.GetBindable<bool>(OsuSetting.FadeHitCirclesInstantly)
+                },
                 new SettingsEnumDropdown<ScoringMode>
                 {
                     LabelText = "Score display mode",
