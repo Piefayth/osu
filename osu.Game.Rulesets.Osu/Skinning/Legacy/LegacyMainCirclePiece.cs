@@ -6,9 +6,11 @@ using osu.Framework.Bindables;
 using osu.Framework.Graphics;
 using osu.Framework.Graphics.Containers;
 using osu.Framework.Graphics.Textures;
+using osu.Game.Configuration;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Rulesets.Objects.Drawables;
+using osu.Game.Rulesets.Osu.Configuration;
 using osu.Game.Rulesets.Osu.Objects;
 using osu.Game.Rulesets.Osu.Objects.Drawables;
 using osu.Game.Skinning;
@@ -42,6 +44,8 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
         private readonly Bindable<Color4> accentColour = new Bindable<Color4>();
         private readonly IBindable<int> indexInCurrentCombo = new Bindable<int>();
 
+        private bool shouldFadeHitCirclesInstantly { get; set; }
+
         [Resolved]
         private DrawableHitObject drawableObject { get; set; }
 
@@ -49,8 +53,9 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
         private ISkinSource skin { get; set; }
 
         [BackgroundDependencyLoader]
-        private void load()
+        private void load(OsuRulesetConfigManager rulesetConfig)
         {
+            shouldFadeHitCirclesInstantly = rulesetConfig.GetBindable<bool>(OsuRulesetSetting.FadeLegacyHitCirclesInstantly).Value;
             var drawableOsuObject = (DrawableOsuHitObject)drawableObject;
 
             bool allowFallback = false;
@@ -146,7 +151,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
 
         private void updateStateTransforms(DrawableHitObject drawableHitObject, ArmedState state)
         {
-            const double legacy_fade_duration = 240;
+            double legacy_fade_duration = shouldFadeHitCirclesInstantly ? 0 : 240;
 
             using (BeginAbsoluteSequence(drawableObject.HitStateUpdateTime))
             {
