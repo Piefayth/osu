@@ -146,7 +146,7 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
 
         private void updateStateTransforms(DrawableHitObject drawableHitObject, ArmedState state)
         {
-            const double legacy_fade_duration = 240;
+            const double legacy_fade_duration = 0;
 
             using (BeginAbsoluteSequence(drawableObject.HitStateUpdateTime))
             {
