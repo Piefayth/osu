@@ -41,6 +41,11 @@ namespace osu.Game.Rulesets.Osu.UI
                     LabelText = "Cursor trail",
                     Current = config.GetBindable<bool>(OsuRulesetSetting.ShowCursorTrail)
                 },
+                new SettingsCheckbox
+                {
+                    LabelText = "Fade legacy skin hitcircles instantly",
+                    Current = config.GetBindable<bool>(OsuRulesetSetting.FadeLegacyHitCirclesInstantly)
+                },
                 new SettingsEnumDropdown<PlayfieldBorderStyle>
                 {
                     LabelText = "Playfield border style",

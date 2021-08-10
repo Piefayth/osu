@@ -10,6 +10,7 @@ using osu.Game.Configuration;
 using osu.Game.Graphics;
 using osu.Game.Graphics.Sprites;
 using osu.Game.Rulesets.Objects.Drawables;
+using osu.Game.Rulesets.Osu.Configuration;
 using osu.Game.Rulesets.Osu.Objects;
 using osu.Game.Rulesets.Osu.Objects.Drawables;
 using osu.Game.Skinning;
@@ -52,9 +53,9 @@ namespace osu.Game.Rulesets.Osu.Skinning.Legacy
         private ISkinSource skin { get; set; }
 
         [BackgroundDependencyLoader]
-        private void load(OsuConfigManager config)
+        private void load(OsuRulesetConfigManager rulesetConfig)
         {
-            shouldFadeHitCirclesInstantly = config.GetBindable<bool>(OsuSetting.FadeLegacyHitCirclesInstantly).Value;
+            shouldFadeHitCirclesInstantly = rulesetConfig.GetBindable<bool>(OsuRulesetSetting.FadeLegacyHitCirclesInstantly).Value;
             var drawableOsuObject = (DrawableOsuHitObject)drawableObject;
 
             bool allowFallback = false;
