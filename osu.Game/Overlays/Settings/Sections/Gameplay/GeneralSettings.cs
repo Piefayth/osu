@@ -76,7 +76,7 @@ namespace osu.Game.Overlays.Settings.Sections.Gameplay
                 },
                 new SettingsCheckbox
                 {
-                    LabelText = "Fade hitcircles instantly",
+                    LabelText = "Fade legacy skin hitcircles instantly",
                     Current = config.GetBindable<bool>(OsuSetting.FadeLegacyHitCirclesInstantly)
                 },
                 new SettingsEnumDropdown<ScoringMode>
